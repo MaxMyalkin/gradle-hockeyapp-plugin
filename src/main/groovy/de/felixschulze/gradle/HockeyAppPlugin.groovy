@@ -64,7 +64,6 @@ class HockeyAppPlugin implements Plugin<Project> {
                 task.applicationVariant = variant
                 task.variantName = variant.name
                 task.outputs.upToDateWhen { false }
-                task.dependsOn variant.assemble
                 task.uploadAllPath = uploadAllPath
 
                 uploadAllTask.dependsOn(task)
