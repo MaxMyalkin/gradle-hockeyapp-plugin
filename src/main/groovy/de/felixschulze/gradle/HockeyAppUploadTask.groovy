@@ -142,7 +142,7 @@ class HockeyAppUploadTask extends DefaultTask {
 
         String appId = null
         if (hockeyApp.variantToApplicationId) {
-            appId = hockeyApp.variantToApplicationId[variantName]
+            appId = hockeyApp.variantToApplicationId[variantName].replace("-", "")
             if (!appId) {
                 if(project.getGradle().getTaskGraph().hasTask(uploadAllPath)) {
                     logger.error("Could not resolve app ID for variant: ${variantName} in the variantToApplicationId map.")
